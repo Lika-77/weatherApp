@@ -1,0 +1,71 @@
+body {
+  background: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+}
+.container {
+  background-color: #fff;
+  width: 700px;
+  margin: 10px auto;
+  padding: 10px 10px;
+  border: 300x;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+h1 {
+  font-size: 55px;
+}
+h2,
+h3 {
+  font-size: 20px;
+  font-family: italic;
+}
+img {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: -105px;
+}
+.details {
+  position: absolute;
+  right: 0;
+  top: -220px;
+}
+.col-3 {
+  background-color: #fff;
+  width: 80px;
+  margin: 7px auto;
+  padding: 7px 7px;
+  border: 70px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+#current-location {
+  background-color: rgb(47, 168, 248);
+}
+#temperature {
+  font-size: 40px;
+  color: black;
+  text-decoration: none;
+}
+#units {
+  font-size: 20px;
+  position: relative;
+  top: -17px;
+}
+#celsius {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+#celsius:hover {
+  text-decoration: underline;
+}
+#fahrenheit {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+#fahrenheit:hover {
+  text-decoration: underline;
+}
