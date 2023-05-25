@@ -1,11 +1,11 @@
 body {
-  background: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
-.container {
-  background-color: #fff;
-  width: 700px;
+.card {
+  background-image: url("../skypic2.jpg");
+  width: 600px;
   margin: 10px auto;
-  padding: 10px 10px;
+  padding: 50px 30px;
   border: 300x;
   border-radius: 10px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
