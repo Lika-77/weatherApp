@@ -1,29 +1,41 @@
 body {
   background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  font-family: italic;
 }
-.card {
-  background-image: url("../images/skypic2.jpg");
-  width: 700px;
-  margin: 10px auto;
-  padding: 30px 30px;
-  border: 300x;
-  border-radius: 10px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-}
+
 h1 {
   font-size: 55px;
 }
 h2,
 h3 {
   font-size: 20px;
-  font-family: italic;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
 }
 img {
   width: 150px;
   display: block;
   margin: 0 auto;
 }
-
+.weather-app-wrapper {
+  max-width: 700px;
+  margin: 10px auto;
+}
+.card {
+  background-image: url("../images/skypic2.jpg");
+  padding: 30px 30px;
+  border: 300x;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
 .col-3 {
   background-color: #fff;
   width: 80px;

@@ -15,10 +15,12 @@
 
   <body>
     <div class="container">
+      <div class="weather-app-wrapper">
       <div class="card">
         <div class="card-body"></div>
         <form id= "search-form">
-          <div class="mb-3">
+          <div class="form-row">
+            <div class="col-9">
             <input type="search"
             placeholder="Search for city..." 
             autofocus = "on" 
@@ -28,6 +30,7 @@
             <input type="submit" value="Search" class="btn btn-light w-6" />
             <input type="submit" id ="current-location" value="Current location" class="btn btn-primary w-6"/>
           </div>
+           </div>
           
         </form>
         <br />
@@ -47,7 +50,7 @@
        <li>
           Day 11°C/ Night 6°C
        </li>
-       <li>
+       <li id ="date">
          Saturday, 15:00
     </li>
         </ul>
@@ -110,6 +113,7 @@
       </div>
     </div>
     <div><a href="https://github.com/Lika-77/weatherApp.git">Open-source code</a> by Anzhelika Kovtun</div>
-    <script src="src/app.js"></script>
+    </div>
+    <script src="./src/app.js"></script>
   </body>
 </html>

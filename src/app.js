@@ -1,5 +1,5 @@
 let now = new Date();
-let h3 = document.querySelector("h3");
+let dateElement = document.querySelector("#date");
 
 let hours = now.getHours();
 if (hours < 10) {
@@ -20,7 +20,7 @@ let days = [
 ];
 let day = days[now.getDay()];
 
-h3.innerHTML = [`${day}, ${hours}:${minutes}`];
+dateElement.innerHTML = [`${day}, ${hours}:${minutes}`];
 
 let temperature = document.querySelector("#temperature");
 temperature.textContent = 17;
