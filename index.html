@@ -16,103 +16,113 @@
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
-      <div class="card">
-        <div class="card-body"></div>
-        <form id= "search-form">
-          <div class="form-row">
-            <div class="col-9">
-            <input type="search"
-            placeholder="Search for city..." 
-            autofocus = "on" 
-            autocomplete="off" 
-            class="form-control"
-            id = "city-input" />
-            <input type="submit" value="Search" class="btn btn-light w-6" />
-            <input type="submit" id ="current-location" value="Current location" class="btn btn-primary w-6"/>
-          </div>
-           </div>
-          
-        </form>
-        <br />
-        <h1 id = "city">Kyiv</h1>
-        <div>
+        <div class="card">
+          <div class="card-body"></div>
+          <form id="search-form">
+            <div class="row">
+              <div class="col-7">
+                <input
+                  type="search"
+                  placeholder="Search for city..."
+                  autofocus="on"
+                  autocomplete="off"
+                  class="form-control"
+                  id="city-input"
+                />
+              </div>
+              <div class="col-2">
+                <input type="submit" value="Search" class="btn btn-light w-6" />
+              </div>
+              <div class="col-2">
+                <input
+                  type="submit"
+                  id="current-location"
+                  value="Current location"
+                  class="btn btn-primary w-6"
+                />
+              </div>
+            </div>
+          </form>
+          <br />
+          <h1 id="city">Kyiv</h1>
+          <div>
             <span id="temperature"><strong>17</strong></span>
             <span id="units"
               ><a href="#" id="celsius">°C</a>|<a href="#" id="fahrenheit"
                 >°F</a
-              ></span>
-              <div class="row">
-                <div class="col-6">
-        <ul>
-          <li>
-          Cloudy
-       </li>
-       <li>
-          Day 11°C/ Night 6°C
-       </li>
-       <li id ="date">
-         Saturday, 15:00
-    </li>
-        </ul>
-        </div>
-        </div>
-        <div class="row">
+              ></span
+            >
+            <div class="row">
+              <div class="col-6">
+                <ul>
+                  <li>Cloudy</li>
+                  <li>Day 11°C/ Night 6°C</li>
+                  <li id="date">Saturday, 15:00</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <img src="images/R.png" alt="sunny" />
+              </div>
+            </div>
+          </div>
           <div class="col-6">
-        <img src="images/R.png" alt="sunny" />
-       </div> 
-      </div>
-      </div>
-        <div class="col-6">
-          <ul>
-            <li class="temperature">
-              <span>Precipitation:</span> <span id="precipitation">10%</span>
-            </li>
-            <li class="temperature"><span>Humidity:</span> <span id="humidity">10%</span>
-            </li>
-            <li class="temperature">
-              <span>Wind:</span> <span id="windy">0km/h</span>
-            </li>
-          </ul>
-      </div>
-      <div class="row">
-        <div class="col-3">
-          <strong> Mon </strong>
-          <br />
-          6° --- 15°
-          <br />
-          ⛅
-        </div>
-        <div class="col-3">
-            <strong>Tue</strong>
-          <br />
-          8° --- 14°
-          <br />
-          🌦️
-        </div>
-        <div class="col-3">
-            <strong> Wed</strong>
-          <br />
-          7° --- 13°
-          <br />
-          ⛅
-        </div>
-        <div class="col-3">
-            <strong>Thu</strong>
-          <br />
-          9° --- 20°
-          <br />
-          ☀️
-        </div>
-        <div class="col-3">
-            <strong>Fri</strong>
-          <br />
-        9° --- 21°
-          <br />
-          ☀️
+            <ul>
+              <li class="temperature">
+                <span>Precipitation:</span> <span id="precipitation">10%</span>
+              </li>
+              <li class="temperature">
+                <span>Humidity:</span> <span id="humidity">10%</span>
+              </li>
+              <li class="temperature">
+                <span>Wind:</span> <span id="windy">0km/h</span>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <strong> Mon </strong>
+              <br />
+              6° --- 15°
+              <br />
+              ⛅
+            </div>
+            <div class="col-3">
+              <strong>Tue</strong>
+              <br />
+              8° --- 14°
+              <br />
+              🌦️
+            </div>
+            <div class="col-3">
+              <strong> Wed</strong>
+              <br />
+              7° --- 13°
+              <br />
+              ⛅
+            </div>
+            <div class="col-3">
+              <strong>Thu</strong>
+              <br />
+              9° --- 20°
+              <br />
+              ☀️
+            </div>
+            <div class="col-3">
+              <strong>Fri</strong>
+              <br />
+              9° --- 21°
+              <br />
+              ☀️
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div><a href="https://github.com/Lika-77/weatherApp.git">Open-source code</a> by Anzhelika Kovtun</div>
+      <div>
+        <a href="https://github.com/Lika-77/weatherApp.git">Open-source code</a>
+        by Anzhelika Kovtun
+      </div>
     </div>
     <script src="./src/app.js"></script>
   </body>
