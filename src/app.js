@@ -55,6 +55,15 @@ function updateWindSpeed(response) {
   windyElement.innerHTML = `${updateWind} km/h`;
 }
 
+function updateIcon(response) {
+  let updateIcon = response.data.weather[0].icon;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+}
+
 function showWeather(response) {
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
@@ -62,6 +71,7 @@ function showWeather(response) {
     response.data.main.temp
   );
 
+  updateIcon(response);
   updatePrecipitation(response);
   updateHumidity(response);
   updateWindSpeed(response);
