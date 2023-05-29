@@ -4,6 +4,7 @@ body {
 }
 
 h1 {
+  color: gainsboro;
   font-size: 55px;
 }
 h2,
@@ -15,10 +16,14 @@ ul {
   padding: 0;
 }
 li {
+  color: gainsboro;
   list-style: none;
   font-size: 18px;
   font-weight: 100;
   line-height: 19px;
+}
+li:first-letter {
+  text-transform: capitalize;
 }
 img {
   position: relative;
@@ -30,9 +35,9 @@ img {
   margin: 10px auto;
 }
 .card {
-  background-image: url("../images/skypic2.jpg");
+  background-image: url("../images/tree.jpg");
   padding: 30px 30px;
-  border: 300x;
+  border: 300px;
   border-radius: 10px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 }
@@ -51,10 +56,11 @@ img {
 }
 #temperature {
   font-size: 40px;
-  color: black;
+  color: gainsboro;
   text-decoration: none;
 }
 #units {
+  color: gainsboro;
   font-size: 17px;
   position: relative;
   top: -17px;
@@ -65,13 +71,5 @@ img {
   font-weight: bold;
 }
 #celsius:hover {
-  text-decoration: underline;
-}
-#fahrenheit {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-#fahrenheit:hover {
   text-decoration: underline;
 }

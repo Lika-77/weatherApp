@@ -25,26 +25,14 @@ dateElement.innerHTML = [`${day}, ${hours}:${minutes}`];
 let temperature = document.querySelector("#temperature");
 temperature.textContent = 17;
 
-function changeFahrenheit() {
-  temperature.textContent = Math.round((temperature.textContent * 9) / 5 + 32);
-}
-function changeCelsius() {
-  temperature.textContent = Math.round(
-    ((temperature.textContent - 32) * 5) / 9
-  );
-}
-
-fahrenheit.addEventListener("click", changeFahrenheit);
-celsius.addEventListener("click", changeCelsius);
-
-function updatePrecipitation(response) {
-  let updatePrecip = Math.round(response.data.clouds.all);
-  let precipitationElement = document.querySelector("#precipitation");
-  precipitationElement.innerHTML = `${updatePrecip}`;
+function updateDescription(response) {
+  let updateDescription = response.data.condition.description;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = `${updateDescription}`;
 }
 
 function updateHumidity(response) {
-  let updateHumid = Math.round(response.data.main.humidity);
+  let updateHumid = Math.round(response.data.temperature.humidity);
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `${updateHumid} %`;
 }
@@ -56,30 +44,29 @@ function updateWindSpeed(response) {
 }
 
 function updateIcon(response) {
-  let updateIcon = response.data.weather[0].icon;
+  let updateIcon = response.data.condition.icon;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
 }
 
 function showWeather(response) {
   let city = document.querySelector("#city");
-  city.innerHTML = response.data.name;
+  city.innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    response.data.temperature.current
   );
-
+  updateDescription(response);
   updateIcon(response);
-  updatePrecipitation(response);
   updateHumidity(response);
   updateWindSpeed(response);
 }
 
 function searchCity(city) {
-  let apiKey = "6507f7c3685e33f3cd734253e01b13ac";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiKey = "3fa6eec140a105879e2t096ob94fbb50";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -90,8 +77,8 @@ function search(event) {
 }
 
 function showPosition(position) {
-  let apiKey = "6507f7c3685e33f3cd734253e01b13ac";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiKey = "3fa6eec140a105879e2t096ob94fbb50";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showWeather);
 }
