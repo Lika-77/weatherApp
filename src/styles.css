@@ -41,15 +41,26 @@ img {
   border-radius: 10px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 }
-.col-3 {
-  background-color: #fff;
-  width: 80px;
-  margin: 7px auto;
-  padding: 7px 7px;
-  border: 70px;
-  border-radius: 10px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+
+.weather-forecast {
+  margin-top: 20px;
   text-align: center;
+  color: white;
+}
+
+.weather-forecast-date {
+  font-size: 25px;
+
+  color: white;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.7;
+}
+
+.weather-forecast-temperatures {
+  font-size: 20px;
+  color: white;
 }
 #current-location {
   background-color: rgb(47, 168, 248);
