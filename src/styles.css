@@ -47,6 +47,17 @@ img {
   text-align: center;
   color: white;
 }
+.weather-forecast:hover {
+  color: black;
+}
+.col-2:hover {
+  background-color: gainsboro;
+  opacity: 0.4;
+  margin: 0 auto;
+  padding: 4px 6px;
+  border-radius: 10px;
+  transition: all 200ms ease-in-out;
+}
 
 .weather-forecast-date {
   font-size: 25px;
