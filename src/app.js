@@ -22,22 +22,37 @@ let day = days[now.getDay()];
 
 dateElement.innerHTML = [`${day}, ${hours}:${minutes}`];
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
   let forecastHTML = `<div class= "row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class = "col-2">
-    <div class = "weather-forecast-date">${day}</div>
-    <img scr = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+    <div class = "weather-forecast-date">${formatDay(forecastDay.time)}</div>
+    <img src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+      forecast.condition.icon_url
+    }.png"
     alt =""
-    width="42"
+    width="10"
     />
     <div class = "weather-forecast-temperatures">
-    <span class = "weather-forecast-temperature-max"> 18° </span>
-    <span class = "weather-forecast-temperature-min"> 12° </span>
+    <span class = "weather-forecast-temperature-max"> ${Math.round(
+      forecastDay.temperature.maximum
+    )}° </span>
+    <span class = "weather-forecast-temperature-min"> ${Math.round(
+      forecastDay.temperature.minimum
+    )}° </span>
     </div>
     </div>
     `;
@@ -45,6 +60,12 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "3fa6eec140a105879e2t096ob94fbb50";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 let temperature = document.querySelector("#temperature");
@@ -87,6 +108,8 @@ function showWeather(response) {
   updateIcon(response);
   updateHumidity(response);
   updateWindSpeed(response);
+
+  getForecast(response.data.coordinates);
 }
 
 function searchCity(city) {
@@ -120,4 +143,3 @@ let currentButton = document.querySelector("#current-location");
 currentButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Kyiv");
-displayForecast();
