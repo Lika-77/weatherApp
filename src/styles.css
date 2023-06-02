@@ -25,10 +25,14 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
-img {
+.col-4 img {
   position: relative;
   top: -60px;
   width: 140px;
+}
+
+.row col-2 {
+  background-color: gainsboro;
 }
 .weather-app-wrapper {
   max-width: 700px;
@@ -78,7 +82,4 @@ img {
   text-decoration: none;
   color: black;
   font-weight: bold;
-}
-#celsius:hover {
-  text-decoration: underline;
 }

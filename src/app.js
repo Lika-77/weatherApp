@@ -25,7 +25,7 @@ dateElement.innerHTML = [`${day}, ${hours}:${minutes}`];
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   return days[day];
 }
@@ -35,16 +35,17 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class= "row">`;
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class = "col-2">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class = "col-2">
     <div class = "weather-forecast-date">${formatDay(forecastDay.time)}</div>
     <img src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-      forecast.condition.icon_url
+      forecastDay.condition.icon
     }.png"
     alt =""
-    width="10"
+    width ="48"
     />
     <div class = "weather-forecast-temperatures">
     <span class = "weather-forecast-temperature-max"> ${Math.round(
@@ -56,6 +57,7 @@ function displayForecast(response) {
     </div>
     </div>
     `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
